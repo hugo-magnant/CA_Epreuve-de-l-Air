@@ -1,8 +1,5 @@
 def ma_fonction(str, sep)
-  if str.nil? || sep.nil?
-    puts "error"
-    exit
-  end
+  return [] if str.nil? || sep.nil?
 
   arr = []
   word = ""
@@ -23,10 +20,11 @@ def ma_fonction(str, sep)
   arr
 end
 
-if ARGV.length != 2
+if ARGV.length != 1
   puts "error"
   exit
 end
 
-result = ma_fonction(ARGV[0], ARGV[1])
+# Utilisation de la fonction avec des espaces, tabulations et retours à la ligne comme séparateurs
+result = ma_fonction(ARGV[0], " \t\n")
 result.each { |word| puts word }
